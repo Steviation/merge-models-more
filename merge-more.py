@@ -38,7 +38,7 @@ if args.load_all:
         model_load = torch.load(model)
         theta_dict[model] = model_load["state_dict"]
   
-alpha_string = '-'.join(str(e)[2:].ljust(2, '0') for e in [base_alpha] + alphas)
+alpha_string = '-'.join(str(e)[2:].ljust(2, '0') for e in [round(base_alpha,2)] + alphas)
 output_file = f'{args.output}-{alpha_string}.ckpt'
 
 # check if output file already exists, ask to overwrite
